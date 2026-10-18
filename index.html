@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سلم — رسالة تهنئة أنيقة في ثانية</title>
+<meta name="description" content="سلم: اختر المناسبة، اكتب اسم من تحب، واحصل على رسالة تهنئة عربية أنيقة جاهزة للنسخ أو الإرسال عبر واتساب. ٨ مناسبات و٢٤ قالبًا، بلا تسجيل.">
+<meta name="theme-color" content="#0f5c4e">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230f5c4e'/%3E%3Cpath d='M20 42c0-10 5-18 12-18s12 8 12 18' fill='none' stroke='%23f6e5c4' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='17' r='3.5' fill='%23f6e5c4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#make">انتقل إلى صانع الرسائل</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="#top" aria-label="سلم — الصفحة الرئيسية">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+          <path d="M5 17c0-5 3-9 7-9s7 4 7 9"/>
+          <circle cx="12" cy="4.5" r="1.6" fill="currentColor" stroke="none"/>
+        </svg>
+      </span>
+      <span class="brand__name">سلم</span>
+    </a>
+    <nav class="site-nav" aria-label="التنقل الرئيسي">
+      <a href="#make">اصنع رسالة</a>
+      <a href="#occasions">المناسبات</a>
+      <a href="#how">كيف يعمل</a>
+      <a href="#faq">أسئلة</a>
+    </nav>
+    <a class="btn btn--small btn--primary" href="#make">ابدأ الآن</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero__inner">
+      <p class="eyebrow">موقع عربي • بلا تسجيل • بلا تطبيق</p>
+      <h1>رسالة تهنئة <span class="hl">تُشبهك</span>،<br>جاهزة في ثانية.</h1>
+      <p class="lead">اختر المناسبة، اكتب اسم من تحب، واحصل على نصّ عربي أنيق جاهز للنسخ أو الإرسال على واتساب. لا حساب، لا انتظار، ولا رسائل عامة باردة.</p>
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="#make">اصنع رسالتك الآن</a>
+        <a class="btn btn--ghost" href="#how">كيف يعمل؟</a>
+      </div>
+      <ul class="hero__facts">
+        <li>٢٤ قالبًا جاهزًا</li>
+        <li>نسخ بضغطة واحدة</li>
+        <li>يعمل على أي هاتف</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="maker" id="make">
+    <div class="container">
+      <div class="section-head">
+        <h2>اصنع رسالتك</h2>
+        <p>املأ الخانتين، اختر المناسبة، ثم اضغط «كوّن الرسالة».</p>
+      </div>
+
+      <div class="maker__grid">
+        <form class="panel" id="msgForm" novalidate>
+          <div class="field">
+            <label for="to">إلى مَن؟</label>
+            <input id="to" name="to" type="text" placeholder="مثال: خديجة" autocomplete="off" maxlength="30" aria-describedby="toError">
+            <p class="field-error" id="toError" hidden>اكتب اسمًا من حرفين على الأقل.</p>
+          </div>
+
+          <div class="field">
+            <label for="from">من؟ <span class="field-hint">(اختياري)</span></label>
+            <input id="from" name="from" type="text" placeholder="اسمك" autocomplete="off" maxlength="30">
+          </div>
+
+          <div class="field">
+            <label for="occasion">المناسبة</label>
+            <select id="occasion" name="occasion"></select>
+          </div>
+
+          <div class="panel__actions">
+            <button type="submit" class="btn btn--primary">كوّن الرسالة</button>
+            <button type="button" class="btn btn--ghost" id="shuffleBtn">قالب آخر</button>
+          </div>
+        </form>
+
+        <div class="card" id="card">
+          <div class="card__bar" aria-hidden="true"></div>
+          <div class="card__head">
+            <span class="card__badge" id="cardBadge">عيد</span>
+            <span class="card__brand">سلم</span>
+          </div>
+          <p class="card__text is-placeholder" id="cardText" aria-live="polite">اكتب الاسم واضغط «كوّن الرسالة» ليظهر نصّ رسالتك هنا.</p>
+          <div class="card__foot">
+            <button type="button" class="btn btn--small btn--primary" id="copyBtn" disabled>نسخ الرسالة</button>
+            <button type="button" class="btn btn--small btn--ghost" id="waBtn" disabled>إرسال على واتساب</button>
+            <button type="button" class="btn btn--small btn--ghost" id="shareBtn" disabled>مشاركة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="occasions" id="occasions">
+    <div class="container">
+      <div class="section-head">
+        <h2>ثماني مناسبات، وثلاثة قوالب لكل واحدة</h2>
+        <p>اضغط على المناسبة لتنتقل بها مباشرة إلى صانع الرسائل.</p>
+      </div>
+      <div class="chips" id="occasionGrid"></div>
+      <noscript><p class="note">لتوليد الرسائل تحتاج إلى تشغيل الجافاسكربت في متصفحك.</p></noscript>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <div class="container">
+      <div class="section-head">
+        <h2>كيف يعمل؟</h2>
+        <p>ثلاث خطوات، أقل من دقيقة.</p>
+      </div>
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">١</span>
+          <h3>اكتب الأسماء</h3>
+          <p>اسم من تُهنّئه، واسمك إن أردت أن تظهر الرسالة موقّعة به.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">٢</span>
+          <h3>اختر المناسبة</h3>
+          <p>عيد، تخرّج، زواج، مولود جديد، شفاء، شكر، صباح الخير، أو توفيق.</p>
+        </li>
+        <li class="step">
+          <span class="step__num">٣</span>
+          <h3>انسخ أو أرسل</h3>
+          <p>زر واحد ينسخ النص، وزر آخر يفتح واتساب برسالتك جاهزة للإرسال.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>أسئلة متكررة</h2>
+      </div>
+      <details>
+        <summary>هل أحتاج إلى حساب أو تسجيل؟</summary>
+        <p>لا. كل شيء يعمل داخل متصفحك مباشرة، ولا نطلب بريدًا ولا كلمة مرور.</p>
+      </details>
+      <details>
+        <summary>هل تُحفظ أسمائي في مكان ما؟</summary>
+        <p>لا. الأسماء تُستخدم لتكوين النص فقط وتبقى في صفحتك، ولا تُرسل إلى أي خادم.</p>
+      </details>
+      <details>
+        <summary>هل يمكنني تعديل الرسالة بعد توليدها؟</summary>
+        <p>نعم. انسخها والصقها في واتساب أو أي تطبيق، ثم عدّل ما تشاء قبل الإرسال.</p>
+      </details>
+      <details>
+        <summary>لماذا زر «مشاركة» لا يظهر عندي؟</summary>
+        <p>زر المشاركة يعتمد على ميزة في المتصفح. إن لم تكن مدعومة، استخدم زر النسخ أو واتساب.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p><strong>سلم</strong> — رسائل تهنئة عربية تُكتب بذوق.</p>
+    <p class="site-footer__note">صُنع ليعمل بلا تسجيل ولا تتبّع.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
