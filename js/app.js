@@ -178,9 +178,9 @@
     }
   }
 
-  function selectOccasion(id, scrollToMaker) {
+  function selectOccasion(id, scrollToMaker, keepTemplate) {
     state.occasionId = id;
-    state.templateIndex = 0;
+    if (!keepTemplate) state.templateIndex = 0;
     el.occasion.value = id;
     var chips = el.grid.querySelectorAll(".chip");
     for (var i = 0; i < chips.length; i++) {
@@ -246,9 +246,9 @@
       state.templateIndex = t;
     }
   }
-  // initial paint
-  selectOccasion(state.occasionId, false);
+  // initial paint: read the link first, then paint the matching occasion
   readUrlState();
+  selectOccasion(state.occasionId, false, true);
   setActionsEnabled(false);
   if (!navigator.share) el.shareBtn.hidden = true;
 
