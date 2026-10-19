@@ -1,0 +1,106 @@
+/* Interior pages: occasions, guide, about, privacy */
+
+.page-hero{
+  padding:2.6rem 0 2rem;
+  background:
+    radial-gradient(60% 70% at 92% 0,rgba(201,146,47,.16),transparent 70%),
+    radial-gradient(50% 60% at 4% 100%,rgba(15,92,78,.12),transparent 70%);
+  border-bottom:1px solid var(--line);
+}
+.page-hero__inner{max-width:760px}
+.page-hero h1{font-size:clamp(1.7rem,5.5vw,2.5rem);font-weight:800}
+.page-hero p{margin-top:.75rem;color:var(--muted);font-size:1.05rem;max-width:60ch}
+.crumbs{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.88rem;color:var(--muted);margin-bottom:.7rem}
+.crumbs a{color:var(--primary);text-decoration:none;font-weight:600}
+.crumbs a:hover{text-decoration:underline}
+.crumbs span[aria-hidden]{color:#b9c3bf}
+
+.page-body{padding:2.4rem 0 3rem}
+.grid-2{display:grid;gap:1.1rem}
+@media (min-width:860px){.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* occasion article cards */
+.occ-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.3rem;box-shadow:var(--shadow);scroll-margin-top:82px;
+}
+.occ-card__head{display:flex;align-items:center;gap:.7rem;margin-bottom:.5rem}
+.occ-card__emoji{
+  display:grid;place-items:center;width:42px;height:42px;flex:0 0 auto;
+  border-radius:13px;background:var(--gold-soft);font-size:1.35rem;line-height:1;
+}
+.occ-card h2{font-size:1.22rem;font-weight:800}
+.occ-card__desc{color:var(--muted);font-size:.98rem}
+
+.tpl-list{display:grid;gap:.6rem;margin-top:1rem}
+.tpl{
+  position:relative;
+  background:#fbf8f2;border:1px solid var(--line);border-inline-start:4px solid var(--oc,var(--primary));
+  border-radius:12px;padding:.85rem 1rem;
+  font-size:1rem;line-height:1.95;white-space:pre-line;
+}
+.tpl__actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.7rem}
+.tpl__label{
+  display:inline-block;font-size:.78rem;font-weight:700;color:var(--muted);
+  letter-spacing:.02em;margin-bottom:.2rem;
+}
+
+/* prose blocks (guide / about / privacy) */
+.prose{max-width:74ch}
+.prose h2{font-size:1.3rem;font-weight:800;margin-top:2rem}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-size:1.08rem;font-weight:700;margin-top:1.3rem}
+.prose p{margin-top:.6rem;color:#3c4b47}
+.prose ul,.prose ol{margin-top:.6rem;display:grid;gap:.4rem;padding-inline-start:0}
+.prose ul li,.prose ol li{
+  position:relative;padding-inline-start:1.35rem;color:#3c4b47;
+}
+.prose ul li::before{
+  content:"◆";position:absolute;inset-inline-start:0;top:.05em;
+  color:var(--gold);font-size:.72rem;
+}
+.prose ol{counter-reset:step}
+.prose ol li{counter-increment:step}
+.prose ol li::before{
+  content:counter(step) ".";
+  position:absolute;inset-inline-start:0;top:0;
+  color:var(--primary);font-weight:800;
+}
+.prose strong{color:var(--ink)}
+.prose a{color:var(--primary);font-weight:600}
+
+.callout{
+  background:#f3faf7;border:1px solid #cfe6df;border-radius:14px;
+  padding:1rem 1.15rem;margin-top:1.2rem;
+}
+.callout p{margin:0;color:#234b41;font-size:.98rem}
+.callout strong{color:var(--primary-dark)}
+
+.cta-band{
+  background:var(--primary);color:#fff;border-radius:20px;
+  padding:1.6rem 1.3rem;margin-top:2.4rem;
+  display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;
+}
+.cta-band h2{font-size:1.2rem;font-weight:800}
+.cta-band p{margin-top:.3rem;color:#d9ece6;font-size:.96rem}
+.cta-band .btn--primary{background:var(--gold);color:#241a06}
+.cta-band .btn--primary:hover{background:#dcae52}
+
+.legal{max-width:74ch}
+.legal h2{font-size:1.18rem;font-weight:800;margin-top:1.8rem}
+.legal h2:first-child{margin-top:0}
+.legal p,.legal li{color:#3c4b47;font-size:.99rem}
+.legal ul{margin-top:.6rem;display:grid;gap:.4rem}
+.legal li{padding-inline-start:1.3rem;position:relative}
+.legal li::before{content:"—";position:absolute;inset-inline-start:0;color:var(--gold)}
+.updated{font-size:.86rem;color:var(--muted);margin-bottom:1.4rem}
+
+.site-nav--footer{
+  display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin:0;font-size:.92rem;
+}
+.site-nav--footer a{color:var(--muted);text-decoration:none;border:0;padding:0}
+.site-nav--footer a:hover,.site-nav--footer a:focus-visible{color:var(--primary);text-decoration:underline}
+
+@media (prefers-reduced-motion:reduce){
+  *{scroll-behavior:auto !important}
+}

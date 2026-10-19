@@ -229,8 +229,26 @@
     el.grid.appendChild(chip);
   });
 
+  // read the URL: index.html?occasion=eid&t=2
+  function readUrlState() {
+    var params = new URLSearchParams(window.location.search);
+    var wanted = params.get("occasion");
+    if (wanted) {
+      for (var i = 0; i < OCCASIONS.length; i++) {
+        if (OCCASIONS[i].id === wanted) {
+          state.occasionId = wanted;
+          break;
+        }
+      }
+    }
+    var t = parseInt(params.get("t"), 10);
+    if (!isNaN(t) && t >= 0) {
+      state.templateIndex = t;
+    }
+  }
   // initial paint
-  paintOccasion(byId(state.occasionId));
+  selectOccasion(state.occasionId, false);
+  readUrlState();
   setActionsEnabled(false);
   if (!navigator.share) el.shareBtn.hidden = true;
 
